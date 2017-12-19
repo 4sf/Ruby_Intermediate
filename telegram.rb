@@ -5,8 +5,8 @@ require 'uri'
 require 'nokogiri'
 
 url = "https://api.telegram.org/bot"
-token = "BotFather에서 받은 token"
-
+token = ENV['TELE_TOKEN']
+ 
 response = HTTParty.get("#{url}#{token}/getUpdates")
 hash = JSON.parse(response.body)
 
